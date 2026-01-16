@@ -1,10 +1,210 @@
-h1 {
-    color: cornsilk;
-}
-p {
-    color: rgb(225, 220, 199);
-}
+/* Minimalistic Black & White Theme */
 body {
     text-align: center;
-    background-color: rgb(24, 41, 41);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    z-index: -3;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
+
+/* Canvas for Particle Network */
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: auto;
+}
+
+/* Top Bar */
+.top-bar {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(20, 20, 20);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+/* Main Content */
+.content {
+    position: relative;
+    z-index: 1;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Link Buttons - Minimalistic Style */
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    margin: 15px 20px;
+    padding: 18px 30px;
+    font-size: 16px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+/* Link Hover Effects */
+.link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Link Active State */
+.link:active {
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Different border styles for variety */
+.link:nth-child(1) {
+    border-radius: 4px 20px 4px 20px;
+}
+
+.link:nth-child(2) {
+    border-radius: 20px 4px 20px 4px;
+}
+
+.link:nth-child(3) {
+    border-radius: 30px;
+}
+
+.link:nth-child(4) {
+    border-radius: 4px;
+}
+
+/* Links Container */
+.link-container {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* Content Box */
+.content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+/* Project Slot */
+.project-slot {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-slot:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.project-slot h3 {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.project-slot p {
+    font-size: 1em;
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .link {
+        width: 80%;
+        margin: 10px 10%;
+    }
+    
+    h1, h2 {
+        font-size: 2em;
+    }
+    
+    p {
+        width: 90%;
+        font-size: 1em;
+    }
+    
+    .content {
+        padding: 20px;
+        margin-top: 100px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
